@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -14,17 +16,17 @@ public class Main {
 
         //task 2
         System.out.println("\n");
-        int friday = 7;
+        int firstFridayInMonth = 7;
         int totalDaysInMonths = 31;
-        while (friday <= totalDaysInMonths) {
-            System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчет.");
-            friday += 7;
+        while (firstFridayInMonth <= totalDaysInMonths) {
+            System.out.printf("Сегодня пятница, %d-е число. Необходимо подготовить отчет.\n", firstFridayInMonth);
+            firstFridayInMonth += 7;
 
         }
 
         //task 3
         System.out.println("");
-        int currentYear = 2022;
+        int currentYear = LocalDate.now().getYear();
         int startYear = currentYear - 200;
         int finishYear = currentYear + 100;
         for (int year = 0; year <= finishYear; year += 79) {
@@ -34,9 +36,9 @@ public class Main {
         }
 
         //task 4 18:28
-        int count = 1;
         System.out.println("\n");
-        for (; count <= 30; count++) {
+
+        for (int count = 1; count <= 30; count++) {
             if (count % 3 == 0 && count % 5 != 0) {
                 System.out.println(count + ": ping");
             } else if (count % 5 == 0 && count % 3 != 0) {
